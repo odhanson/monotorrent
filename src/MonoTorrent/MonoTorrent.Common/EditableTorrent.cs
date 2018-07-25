@@ -57,7 +57,7 @@ namespace MonoTorrent
         }
 
         public long PieceLength {
-            get { return GetLong (InfoDict, PieceLengthKey); }
+            get { return InfoDict.ContainsKey(PieceLengthKey) ? GetLong (InfoDict, PieceLengthKey) : 0; }
             set { SetLong (InfoDict, PieceLengthKey, value); }
         }
 

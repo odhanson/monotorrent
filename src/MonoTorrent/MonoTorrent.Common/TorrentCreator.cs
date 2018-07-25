@@ -253,7 +253,7 @@ namespace MonoTorrent.Common {
 
         internal BEncodedDictionary Create(string name, List<TorrentFile> files)
         {
-            if (!InfoDict.ContainsKey("piece length") || PieceLength == 0)
+            if (PieceLength == 0)
                 PieceLength = RecommendedPieceSize(files);
 
             BEncodedDictionary torrent = BEncodedValue.Clone (Metadata);
